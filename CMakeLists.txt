@@ -14,4 +14,21 @@ add_executable(thread_server src/03_threading/thread_server.cpp)
 
 if (UNIX)
     target_link_libraries( thread_server pthread )
+    set(CMAKE_CXX_COMPILER /bin/g++-10)
+endif (UNIX)
+
+add_executable(select_server src/05_multiplexing/select_server.cpp src/05_multiplexing/tcp_server.cpp)
+
+add_library(nwkit src/nwkit/nwkit.cpp src/nwkit/coro_tools.cpp)
+set_property(TARGET nwkit PROPERTY CXX_STANDARD 20)
+if (UNIX)
+target_compile_options(nwkit PUBLIC "-fcoroutines")
+endif (UNIX)
+
+add_executable(coro_server src/06_coroutine/coro_server.cpp src/06_coroutine/socket_handlers.cpp)
+target_link_libraries(coro_server nwkit)
+set_property(TARGET coro_server PROPERTY CXX_STANDARD 20)
+
+if (UNIX)
+target_compile_options(coro_server PUBLIC "-fcoroutines")
 endif (UNIX)

@@ -99,7 +99,7 @@ int main( int argc, char** argv )
     }
 
     printf( "Bytes sent: %d\n", iResult );
-    printf( "Press ENTER to contine\n");
+    printf( "Press ENTER to continue\n");
     getchar();
 
     iResult = send( ConnectSocket, sendbuf + len/2, (int) len - len / 2, 0 );

@@ -69,6 +69,18 @@
         "xtree": "cpp",
         "xutility": "cpp",
         "coroutine": "cpp",
-        "set": "cpp"
+        "set": "cpp",
+        "*.tcc": "cpp",
+        "cstdarg": "cpp",
+        "cwctype": "cpp",
+        "deque": "cpp",
+        "unordered_map": "cpp",
+        "functional": "cpp",
+        "memory_resource": "cpp",
+        "numeric": "cpp",
+        "random": "cpp",
+        "string_view": "cpp",
+        "fstream": "cpp",
+        "ranges": "cpp"
     }
 }

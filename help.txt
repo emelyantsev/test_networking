@@ -9,4 +9,8 @@ cmake --build . --config Debug
 -------------------------------------
 
 
+in fork_server need to use wait() to prevent child zombies
+
+
+-------------------------------------
 

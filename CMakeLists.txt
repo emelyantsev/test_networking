@@ -32,3 +32,8 @@ set_property(TARGET coro_server PROPERTY CXX_STANDARD 20)
 if (UNIX)
 target_compile_options(coro_server PUBLIC "-fcoroutines")
 endif (UNIX)
+
+if (UNIX)
+    add_executable(fork_server src/04_multiprocessing/fork_server.cpp)
+    target_link_libraries( fork_server pthread )
+endif (UNIX)

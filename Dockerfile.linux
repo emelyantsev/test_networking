@@ -1,0 +1,11 @@
+FROM ubuntu:latest
+
+LABEL maintainer="aleks.twin@gmail.com"
+
+COPY cmake/build_linux/coro_server /echo_server_app/
+
+EXPOSE 27015
+
+WORKDIR /echo_server_app
+
+ENTRYPOINT [ "./coro_server" ]

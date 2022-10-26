@@ -18,3 +18,11 @@ in fork_server need to use wait() to prevent child zombies
 Debug\test_client1.exe 127.0.0.1
 
 -------------------------------------
+
+docker build -f Dockerfile.linux -t coro-server-img .
+docker run -p 27015:27015 --name coro-server-container coro-server-img
+
+docker build -f Dockerfile.win -t coro-server-win-img .
+docker run -rm -it -p 27015:27015 --name coro-server-win-container coro-server-win-img
+
+docker run -rm -it  coro-server-win-img cmd.exe
